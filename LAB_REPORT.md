@@ -23,12 +23,17 @@ Answer:
 
 ### Checkpoint 2 · Evidence
 
-- Final API test count after TODO 1:
-- Browser prediction JSON for `data/current/leaf-01.jpg` (`UNAVAILABLE` and the error shown if the page gives no prediction):
+- Final API test count after TODO 1: 7 passed
+- Browser prediction JSON for `data/current/leaf-01.jpg` (`UNAVAILABLE` and the error shown if the page gives no prediction): `0.5016346573829651`
 
 ### Question 2 · Explanation
+What does /ready check that /health does not check? Why is the model version part of a prediction
+response?
 
-Answer:
+Answer: 
+>`/ready` checks if model is available and loaded successfully and reports its version (identifies which trained artifact generated the results)
+
+>`/health` confirms whether the web service is alive.
 
 ## Milestone 3 · Run tests and build in GitHub Actions
 
