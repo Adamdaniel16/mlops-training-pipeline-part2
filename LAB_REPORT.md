@@ -87,11 +87,20 @@ Fill each row from its own `summary.json`. Use the file from the CURRENT report 
 
 | Batch | Reference mean (`reference_mean`) | Batch mean (`current_mean`) | Method | Score | Threshold | Result (`DRIFT` or `NO DRIFT`) |
 | --- | --- | --- | --- | --- | --- | --- |
-| `CURRENT` | | | | | | |
-| `SHIFTED` | | | | | | |
+| `CURRENT` | 0.4724440528104574 | 0.47574189751633994 | K-S p_value | 0.8079631540901643 | 0.05 | NO_DRIFT |
+| `SHIFTED` | 0.4724440528104574 | 0.16466240836601304 | K-S p_value | 1.6911233892144742e-17 | 0.05 | DRIFT |
 
-- Final full test count:
+- Final full test count: `9 passed`
 
 ### Question 5 · Explanation
+Use the p-values and threshold to explain both drift results. What real change could cause the
+brightness shift? Why are labels needed to check accuracy?
 
 Answer:
+>CURRENT p-values of 0.8079 is above the 0.05 threshold. No statistically significant brightness drift is detected. 
+
+>SHIFTED has a p-value of 1.6911e-17 which is far below 0.05. So brightness shift is detected.
+
+>It is as expected as SHIFTED images are reduced brightness of CURRENT images. Real change that could cause the brightness shift such as poor lighting, darkened images, and camera configuration changes
+
+>Labels are needed to compare predictions with actual classes and evaluate their accuracy. Drift alone cannot determine if the prediction is less accurate.

@@ -29,7 +29,11 @@ def run_monitoring(reference_folder: Path, current_folder: Path, output: Path) -
     batch = image_features(current_folder)
 
     # TODO 3
-    raise NotImplementedError("Complete TODO 3 first.")
+    report = Report([DataDriftPreset()])
+    snapshot = report.run(
+        reference_data=reference,
+        current_data=batch
+    )
 
     # Read the preset's results for the single feature in these reports.
     metrics = snapshot.dict()["metrics"]
