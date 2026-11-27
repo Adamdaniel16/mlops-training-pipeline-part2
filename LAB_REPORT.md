@@ -78,6 +78,7 @@ this deployment? What would you check first?
 Answer:
 >No, I will not approve it as the model version doesn't correspond to expected version of the model. I will check `/ready`, deployed commit SHA, deployment logs, and model artifact loaded by the container. This will identify whether the wrong build or model was deployed.
 
+
 ## Milestone 5 · Compare input distributions
 
 ### Checkpoint 5 · Evidence
