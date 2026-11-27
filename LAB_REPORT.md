@@ -40,7 +40,7 @@ Answer:
 ### Checkpoint 3 · Evidence
 
 - Local branch: main
-- Local commit SHA: 5ca327ad35f6405541f34b69ed3332d8f5214758
+- Local commit SHA: 3421b27cc8e7d9001e05570d9ceab18a7c03166c    # misinput before
 - Local API test count: 7 passed
 - Actions run source (`main`, `PULL REQUEST` or `UNAVAILABLE`):
 - Actions run URL: [Merge pull request #1 from Adamdaniel16/ci-checks #2](https://github.com/Adamdaniel16/mlops-training-pipeline-part2/actions/runs/46007581610)
@@ -62,18 +62,21 @@ Answer:
 
 ### Checkpoint 4 · Evidence
 
-- Mode (`RENDER` or `LOCAL`):
-- Target URL:
-- Tested commit SHA:
-- Expected model version from Checkpoint 1:
-- Observed model version from `/ready` (`UNAVAILABLE` if it returned none):
-- Smoke check result (`PASS` or `FAIL`):
-- First error, if any:
-- Earlier Render attempt, if switching to local (URL if available and reason for switching):
+- Mode (`RENDER` or `LOCAL`): `RENDER`
+- Target URL: [Render URL](https://mlops-training-pipeline-part2.onrender.com/)
+- Tested commit SHA: 3421b27cc8e7d9001e05570d9ceab18a7c03166c
+- Expected model version from Checkpoint 1: `phase1-reference-v1`
+- Observed model version from `/ready` (`UNAVAILABLE` if it returned none): `(model_version=phase1-reference-v1)`
+- Smoke check result (`PASS` or `FAIL`): `PASS`
+- First error, if any: -
+- Earlier Render attempt, if switching to local (URL if available and reason for switching): -
 
 ### Question 4 · Explanation
+Suppose `/health` returns `200` and `/predict` reports an unexpected model version. Would you approve
+this deployment? What would you check first?
 
 Answer:
+>No, I will not approve it as the model version doesn't correspond to expected version of the model. I will check `/ready`, deployed commit SHA, deployment logs, and model artifact loaded by the container. This will identify whether the wrong build or model was deployed.
 
 ## Milestone 5 · Compare input distributions
 
