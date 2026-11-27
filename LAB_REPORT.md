@@ -6,10 +6,10 @@ At each milestone, copy the observed results under **Checkpoint**, then answer t
 
 ### Checkpoint 1 · Evidence
 
-- GitHub repository URL:
-- Expected model version:
-- Three class labels:
-- First pushed commit SHA:
+- GitHub repository URL: [Adamdaniel16/mlops-training-pipeline-part2](https://github.com/Adamdaniel16/mlops-training-pipeline-part2.git)
+- Expected model version: `bean-cnn.onnx`
+- Three class labels: `angular_leaf_spot`, `bean_rust`, `healthy`
+- First pushed commit SHA: ee81e1a553e5b7effeb0f862920b915eca985c17
 
 ### Question 1 · Explanation
 
