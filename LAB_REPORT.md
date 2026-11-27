@@ -39,20 +39,24 @@ Answer:
 
 ### Checkpoint 3 · Evidence
 
-- Local branch:
-- Local commit SHA:
-- Local API test count:
+- Local branch: main
+- Local commit SHA: 5ca327ad35f6405541f34b69ed3332d8f5214758
+- Local API test count: 7 passed
 - Actions run source (`main`, `PULL REQUEST` or `UNAVAILABLE`):
-- Actions run URL:
-- `tests` job status:
-- `docker-build` job status:
-- Container smoke result or first failed CI step:
+- Actions run URL: [Merge pull request #1 from Adamdaniel16/ci-checks #2](https://github.com/Adamdaniel16/mlops-training-pipeline-part2/actions/runs/46007581610)
+- `tests` job status: `PASS`
+- `docker-build` job status: `PASS`
+- Container smoke result or first failed CI step: `PASS`
 
 For the two job statuses, use `PASS`, `FAIL`, `PENDING`, `SKIPPED`, `CANCELLED` or `UNAVAILABLE`. Use `SKIPPED` when Actions shows that a job was skipped. Use `UNAVAILABLE` for missing CI evidence.
 
 ### Question 3 · Explanation
+What does needs: tests enforce? Why do you check the run on main after the pull request is merged?
 
 Answer:
+>`needs: tests` inside `docker-build:` ensures that the job starts only after `tests` job passed successfully. If tests fail, Docker build and smoke testing are skipped
+
+>Because it verifies the final merged repository state and not the pull request's trial merge. This confirms that the exact main-branch commit builds and runs correctly.
 
 ## Milestone 4 · Verify a staging release
 
