@@ -7,13 +7,17 @@ At each milestone, copy the observed results under **Checkpoint**, then answer t
 ### Checkpoint 1 · Evidence
 
 - GitHub repository URL: [Adamdaniel16/mlops-training-pipeline-part2](https://github.com/Adamdaniel16/mlops-training-pipeline-part2.git)
-- Expected model version: `bean-cnn.onnx`
+- Expected model version: `phase1-reference-v1`
 - Three class labels: `angular_leaf_spot`, `bean_rust`, `healthy`
 - First pushed commit SHA: ee81e1a553e5b7effeb0f862920b915eca985c17
 
 ### Question 1 · Explanation
+What does the model version identify? What does the Git SHA you just recorded identify?
 
 Answer:
+> **Model Version** identifies specific trained artifact (and its metadata), and not the .onxx filename
+
+> **Git SHA** identifies exact first commit, including project files and repository snapshot at that point
 
 ## Milestone 2 · Serve predictions with FastAPI
 
